@@ -1,15 +1,14 @@
 #!/bin/bash
-
-# Trash Collector is a plugin for BitBar that enables you to empty your trash
-# BitBar plugin - https://github.com/carlsonorozco/trash-collector
 #
-# by Carlson Orozco
-#
-# Refresh every 5 seconds
+# <bitbar.title>Trash Collector</bitbar.title>
+# <bitbar.version>v1.0</bitbar.version>
+# <bitbar.author>Carlson Orozco</bitbar.author>
+# <bitbar.author.github>carlsonorozco</bitbar.author.github>
+# <bitbar.desc>Trash Collector is a plugin for BitBar that enables you to empty your trash.</bitbar.desc>
 
 about="About Trash Collector | color=red href=https://github.com/carlsonorozco/trash-collector"
 
-trash_count=$(find $HOME/.Trash/  | wc -l)
+trash_count=$(find "$HOME/.Trash/" | wc -l)
 trash_count=$((trash_count-1))
 
 if [ "$1" = 'empty' ]; then
@@ -21,7 +20,7 @@ if [ "$1" = 'empty' ]; then
 fi
 
 if [ "$1" = 'open' ]; then
-    open $HOME/.Trash/
+    open "$HOME/.Trash/"
     exit
 fi
 
